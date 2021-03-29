@@ -88,7 +88,7 @@ public struct option_t
  */
 extern (C)
 pure nothrow @trusted @nogc
-public .option_t* GetOptList(const int argc, scope const char** argv, const char* options)
+public .option_t* GetOptList(const int argc, scope const char** argv, scope const char* options)
 
 	in
 	{
@@ -229,7 +229,7 @@ public void FreeOptList(.option_t* list)
  * Returns: Index of argument in option list. Index of end of string if arguement does not appear in the option list.
  */
 pure nothrow @trusted @nogc @live
-private size_t MatchOpt(const char argument, const char* options)
+private size_t MatchOpt(const char argument, scope const char* options)
 
 	in
 	{
